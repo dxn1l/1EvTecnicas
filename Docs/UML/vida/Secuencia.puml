@@ -1,0 +1,22 @@
+@startuml
+
+title Diagrama de Secuencia - Juego de la Vida
+
+actor Usuario
+participant Principal
+participant Tablero
+
+Usuario -> Principal: Ejecutar main()
+Principal -> Tablero: leerEstadoActual()
+alt Si no hay archivo
+    Principal -> Tablero: generarEstadoActualPorMontecarlo()
+end
+Principal -> Tablero: Mostrar tablero inicial
+loop Mientras la simulación no termine
+    Principal -> Tablero: transitarAlEstadoSiguiente()
+    Tablero -> Tablero: Aplicar reglas del juego
+    Principal -> Tablero: Mostrar tablero actualizado
+end
+Usuario -> Principal: Finalizar ejecución
+
+@enduml

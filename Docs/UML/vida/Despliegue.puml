@@ -1,0 +1,25 @@
+@startuml
+
+title Diagrama de Despliegue - Juego de la Vida
+
+node "Usuario" {
+    [Interfaz de Consola]
+}
+
+node "Servidor" {
+    component "Aplicación" {
+        [Principal] --> [Tablero]
+    }
+}
+
+node "Sistema" {
+    [Procesador]
+    [Memoria]
+}
+
+[Interfaz de Consola] --> [Principal] : "Ejecuta la simulación"
+[Principal] --> [Tablero] : "Gestiona el juego"
+[Tablero] --> [Procesador] : "Realiza cálculos"
+[Tablero] --> [Memoria] : "Almacena estado del tablero"
+
+@enduml

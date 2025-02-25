@@ -1,0 +1,21 @@
+@startuml
+
+title Diagrama de Clases - Juego de la Vida
+
+class Tablero {
+    +DIMENSION: int = 30
+    -estadoActual: int[][]
+    -estadoSiguiente: int[][]
+    +leerEstadoActual(): void
+    +generarEstadoActualPorMontecarlo(): void
+    +transitarAlEstadoSiguiente(): void
+    +toString(): String
+}
+
+class Principal {
+    +main(String[] args): void
+}
+
+Principal -> Tablero : "Usa"
+
+@enduml

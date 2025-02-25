@@ -1,0 +1,21 @@
+@startuml
+
+title Diagrama de Casos de Uso - Juego de la Vida
+
+actor Usuario
+
+usecase "Ejecutar simulación" as UC1
+usecase "Leer estado inicial del tablero" as UC2
+usecase "Generar estado inicial aleatorio" as UC3
+usecase "Aplicar reglas del juego" as UC4
+usecase "Actualizar tablero" as UC5
+usecase "Mostrar resultado en consola" as UC6
+
+Usuario -> UC1
+UC1 -> UC2
+UC1 -> UC3
+UC1 -> UC4
+UC1 -> UC5
+UC1 -> UC6
+
+@enduml

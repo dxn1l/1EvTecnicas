@@ -1,0 +1,22 @@
+@startuml
+
+title Diagrama de Actividades - Juego de la Vida
+
+start
+
+:Leer estado inicial del archivo;
+if (¿Archivo disponible?) then (Sí)
+    :Cargar estado inicial en la matriz;
+else (No)
+    :Generar estado inicial aleatorio;
+endif
+
+while (¿Continuar simulación?) is (Sí)
+    :Mostrar tablero en consola;
+    :Aplicar reglas del juego;
+    :Actualizar tablero;
+endwhile
+
+stop
+
+@enduml

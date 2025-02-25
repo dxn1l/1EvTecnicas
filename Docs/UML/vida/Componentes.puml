@@ -1,0 +1,15 @@
+@startuml
+
+title Diagrama de Componentes - Juego de la Vida
+
+component "Aplicación" {
+    [Principal] --> [Tablero]
+}
+
+component "Librerías" {
+    [Java Standard Library]
+}
+
+[Tablero] --> [Java Standard Library] : "Usa funciones estándar"
+
+@enduml

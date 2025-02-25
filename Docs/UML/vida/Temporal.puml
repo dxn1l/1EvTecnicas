@@ -1,0 +1,23 @@
+@startuml
+
+title Diagrama Temporal - Juego de la Vida
+
+participant "Usuario" as Usuario
+participant "Sistema" as Sistema
+participant "Tablero" as Tablero
+
+autonumber
+Usuario -> Sistema : Inicia ejecución (t=0s)
+Sistema -> Tablero : Leer estado inicial (t=1s)
+Tablero -> Tablero : Procesar estado inicial (t=2s)
+Sistema -> Tablero : Generar estado aleatorio (t=3s)
+Tablero -> Tablero : Crear matriz inicial (t=4s)
+loop Transiciones de estado
+    Sistema -> Tablero : Transitar al siguiente estado (t=5s - t=20s)
+    Tablero -> Tablero : Aplicar reglas del juego (t=5s - t=20s)
+    Tablero -> Sistema : Devolver estado actualizado (t=6s - t=21s)
+    Sistema -> Usuario : Mostrar estado en consola (t=7s - t=22s)
+end
+Usuario -> Sistema : Finalizar ejecución (t=23s)
+
+@enduml
