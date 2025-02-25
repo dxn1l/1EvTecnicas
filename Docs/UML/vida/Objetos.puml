@@ -1,0 +1,17 @@
+@startuml
+
+title Diagrama de Objetos - Juego de la Vida
+
+object principalObj {
+    main(String[] args)
+}
+
+object tableroObj {
+    leerEstadoActual()
+    generarEstadoActualPorMontecarlo()
+    transitarAlEstadoSiguiente()
+}
+
+principalObj -> tableroObj : "Ejecuta simulación"
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+
+title Diagrama de Estado - Juego de la Vida
+
+state "Inicio" as Inicio
+state "Leer Estado Inicial" as LeerEstado
+state "Generar Estado Aleatorio" as GenerarEstado
+state "Mostrar Tablero" as MostrarTablero
+state "Aplicar Reglas" as AplicarReglas
+state "Actualizar Tablero" as ActualizarTablero
+state "Fin" as Fin
+
+Inicio --> LeerEstado
+LeerEstado --> GenerarEstado : "Si no hay archivo"
+LeerEstado --> MostrarTablero : "Si hay archivo"
+GenerarEstado --> MostrarTablero
+MostrarTablero --> AplicarReglas
+AplicarReglas --> ActualizarTablero
+ActualizarTablero --> MostrarTablero : "Repetir mientras no termine la simulación"
+ActualizarTablero --> Fin : "Si la simulación termina"
+
+@enduml

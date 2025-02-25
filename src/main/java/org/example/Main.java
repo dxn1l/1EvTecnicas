@@ -1,7 +1,10 @@
 package org.example;
 
 import org.example.pi.Aproximacion;
+import org.example.vida.Tablero;
+
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,7 +28,7 @@ public class Main {
                     System.out.println("El número PI aproximado es: " + piAproximado);
                     break;
                 case 2:
-                    System.out.println("Juego de la Vida aún no implementado.");
+                    ejecutarJuegoDeLaVida();
                     break;
                 case 3:
                     System.out.println("Búsqueda en Grafos aún no implementada.");
@@ -37,6 +40,40 @@ public class Main {
                 default:
                     System.out.println("Opción no válida. Inténtalo de nuevo.");
             }
+        }
+    }
+
+
+
+    private static void ejecutarJuegoDeLaVida() {
+        try {
+            Tablero tablero = new Tablero();
+            System.out.println("===============SIMULACIÓN CON TABLERO LEÍDO DEL ARCHIVO===============\n");
+            tablero.leerEstadoActual();
+            System.out.println("Estado Inicial:");
+            System.out.println(tablero);
+
+            for (int i = 0; i < 5; i++) {
+                TimeUnit.SECONDS.sleep(1);
+                tablero.transitarAlEstadoSiguiente();
+                System.out.println("Estado en Iteración " + (i + 1) + " (Archivo):");
+                System.out.println(tablero);
+            }
+
+            System.out.println("================SIMULACIÓN CON TABLERO GENERADO ALEATORIAMENTE==========================\n");
+            tablero.generarEstadoActualPorMontecarlo();
+            System.out.println("Estado Inicial (Montecarlo):");
+            System.out.println(tablero);
+
+            for (int i = 0; i < 15; i++) {
+                TimeUnit.SECONDS.sleep(1);
+                tablero.transitarAlEstadoSiguiente();
+                System.out.println("Estado en Iteración " + (i + 1) + " (Montecarlo):");
+                System.out.println(tablero);
+            }
+
+        } catch (InterruptedException e) {
+            System.out.println("Error en la simulación: " + e.getMessage());
         }
     }
 }
