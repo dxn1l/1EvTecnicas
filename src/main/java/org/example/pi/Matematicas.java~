@@ -1,0 +1,33 @@
+package org.example.pi;
+
+import java.util.Random;
+
+public class Matematicas {
+
+    public static double generarNumeroPi(long pasos) {
+        Random random = new Random();
+        long aciertos = 0;
+
+
+        double x = random.nextDouble() ;
+        System.out.println("x: " + x);
+        x = x * 2 - 1;
+        System.out.println("x: " + x);
+
+
+//        for (long i = 0; i < pasos; i++) {
+//            double x = random.nextDouble() ;
+//            System.out.println("x: " + x);
+//            x = x * 2 - 1;
+//            System.out.println("x: " + x);
+//            double y = random.nextDouble() * 2 - 1;
+//
+//            if (x * x + y * y <= 1) {
+//                aciertos++;
+//            }
+//        }
+
+//        return 4.0 * aciertos / pasos;
+        return 0;
+    }
+}
