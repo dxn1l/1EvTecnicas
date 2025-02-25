@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.pi.Aproximacion;
+import org.example.pi.Matematicas;
 import org.example.vida.Tablero;
 
 import java.util.Scanner;
@@ -24,7 +24,7 @@ public class Main {
                 case 1:
                     System.out.print("Introduce el número de puntos para la aproximación de Pi: ");
                     long pasos = scanner.nextLong();
-                    double piAproximado = Aproximacion.generarNumeroPi(pasos);
+                    double piAproximado = Matematicas.generarNumeroPi(pasos);
                     System.out.println("El número PI aproximado es: " + piAproximado);
                     break;
                 case 2:

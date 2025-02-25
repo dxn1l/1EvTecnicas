@@ -1,0 +1,24 @@
+@startuml
+
+title Diagrama de Objetos - Búsqueda de un Camino en un Grafo
+
+object usuarioObj {
+    Solicita búsqueda de camino
+}
+
+object principalObj {
+    Ejecuta búsqueda de camino
+}
+
+object grafoObj {
+    Almacena vértices y aristas
+    Ejecuta método onePath(v1, v2)
+}
+
+usuarioObj -> principalObj : Solicita búsqueda de camino
+principalObj -> grafoObj : Llama a onePath(v1, v2)
+grafoObj -> grafoObj : Procesa búsqueda en el grafo
+grafoObj -> principalObj : Retorna camino encontrado
+principalObj -> usuarioObj : Muestra resultado
+
+@enduml

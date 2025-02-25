@@ -1,0 +1,23 @@
+@startuml
+
+title Diagrama de Componentes - Búsqueda de un Camino en un Grafo
+
+component "Aplicación" {
+    [Principal] --> [Graph]
+}
+
+component "Estructura de Datos" {
+    [Graph] --> [HashMap]
+    [Graph] --> [Set]
+}
+
+component "Librerías" {
+    [Java Standard Library]
+}
+
+[Principal] --> [Graph] : "Realiza operaciones sobre el grafo"
+[Graph] --> [HashMap] : "Almacena la lista de adyacencia"
+[Graph] --> [Set] : "Almacena vértices conectados"
+[Graph] --> [Java Standard Library] : "Usa clases estándar"
+
+@enduml

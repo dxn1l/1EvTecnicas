@@ -1,0 +1,24 @@
+@startuml
+
+title Diagrama de Actividades - Búsqueda de un Camino en un Grafo
+
+start
+
+:Crear grafo;
+:Agregar vértices y aristas;
+:Solicitar búsqueda de camino;
+:Inicializar pila y traza;
+while (¿Pila vacía o destino encontrado?) is (No)
+    :Extraer vértice actual;
+    :Verificar si es destino;
+    if (Es destino?) then (Sí)
+        :Reconstruir camino desde la traza;
+        stop
+    else (No)
+        :Agregar vecinos a la pila y registrar en traza;
+    endif
+endwhile
+:Si no se encuentra camino, devolver null;
+stop
+
+@enduml

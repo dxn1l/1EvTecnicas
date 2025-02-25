@@ -1,0 +1,21 @@
+@startuml
+
+title Diagrama de Clases - Búsqueda de un Camino en un Grafo
+
+class Graph<V> {
+    - adjacencyList: Map<V, Set<V>>
+    + addVertex(v: V): boolean
+    + addEdge(v1: V, v2: V): boolean
+    + obtainAdjacents(v: V): Set<V>
+    + containsVertex(v: V): boolean
+    + toString(): String
+    + onePath(v1: V, v2: V): List<V>
+}
+
+class Principal {
+    + main(String[] args): void
+}
+
+Principal -> Graph : "Usa para la búsqueda de caminos"
+
+@enduml
