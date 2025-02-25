@@ -1,0 +1,22 @@
+@startuml
+
+title Diagrama de Estados - Aproximación a Pi
+
+state "Inicio" as Inicio
+state "Generar Puntos Aleatorios" as GenerarPuntos
+state "Verificar Dentro del Círculo" as VerificarCirculo
+state "Actualizar Contador de Aciertos" as ActualizarContador
+state "Calcular Pi" as CalcularPi
+state "Mostrar Resultado" as MostrarResultado
+state "Fin" as Fin
+
+Inicio --> GenerarPuntos
+GenerarPuntos --> VerificarCirculo
+VerificarCirculo --> ActualizarContador : "Si dentro"
+VerificarCirculo --> GenerarPuntos : "Si fuera"
+ActualizarContador --> GenerarPuntos : "Más puntos disponibles"
+ActualizarContador --> CalcularPi : "Sin más puntos"
+CalcularPi --> MostrarResultado
+MostrarResultado --> Fin
+
+@enduml

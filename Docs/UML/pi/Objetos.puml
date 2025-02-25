@@ -1,0 +1,15 @@
+@startuml
+
+title Diagrama de Objetos - Aproximación a Pi
+
+object principalObj {
+    main(String[] args)
+}
+
+object matematicasObj {
+    generarNumeroPi(long pasos)
+}
+
+principalObj -> matematicasObj : "Invoca generarNumeroPi"
+
+@enduml

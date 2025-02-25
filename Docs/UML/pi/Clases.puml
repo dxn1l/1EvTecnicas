@@ -1,0 +1,15 @@
+@startuml
+
+title Diagrama de Clases - Aproximación a Pi
+
+class Principal {
+    +main(String[] args): void
+}
+
+class Matematicas {
+    +generarNumeroPi(long pasos): double
+}
+
+Principal -> Matematicas : "Llama a generarNumeroPi"
+
+@enduml

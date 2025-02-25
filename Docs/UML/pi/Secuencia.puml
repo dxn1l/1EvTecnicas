@@ -1,0 +1,21 @@
+@startuml
+
+title Diagrama de Secuencia - Aproximación a Pi
+
+actor Usuario
+participant Principal
+participant Matematicas
+
+Usuario -> Principal: Ejecutar main()
+Principal -> Matematicas: generarNumeroPi(pasos)
+loop Para cada punto generado
+    Matematicas -> Matematicas: Generar x, y aleatorios
+    Matematicas -> Matematicas: Verificar si (x^2 + y^2) <= 1
+    alt Si está dentro del círculo
+        Matematicas -> Matematicas: Incrementar aciertos
+    end
+end
+Matematicas -> Principal: Devolver pi aproximado
+Principal -> Usuario: Mostrar resultado
+
+@enduml

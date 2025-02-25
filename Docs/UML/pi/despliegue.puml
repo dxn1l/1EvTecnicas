@@ -1,0 +1,25 @@
+@startuml
+
+title Diagrama de Despliegue - Aproximación a Pi
+
+node "Usuario" {
+    [Interfaz de Consola]
+}
+
+node "Servidor" {
+    component "Aplicación" {
+        [Principal] --> [Matematicas]
+    }
+}
+
+node "Sistema" {
+    [Procesador]
+    [Memoria]
+}
+
+[Interfaz de Consola] --> [Principal] : "Ejecuta la aplicación"
+[Principal] --> [Matematicas] : "Calcula Pi"
+[Matematicas] --> [Procesador] : "Realiza cálculos"
+[Matematicas] --> [Memoria] : "Almacena resultados"
+
+@enduml

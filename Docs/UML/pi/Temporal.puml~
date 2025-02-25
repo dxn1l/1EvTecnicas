@@ -1,0 +1,20 @@
+@startuml
+
+title Diagrama Temporal - Aproximación a Pi
+
+participant "Usuario" as Usuario
+participant "Sistema" as Sistema
+participant "Matematicas" as Matematicas
+
+Usuario -> Sistema : Inicia ejecución
+Sistema -> Matematicas : Generar puntos aleatorios
+Matematicas -> Matematicas : Verificar si están dentro del círculo
+alt Si está dentro
+    Matematicas -> Sistema : Incrementar contador de aciertos
+end
+Sistema -> Matematicas : Repetir hasta completar iteraciones
+Sistema -> Matematicas : Calcular aproximación de Pi
+Matematicas -> Sistema : Retornar resultado
+Sistema -> Usuario : Mostrar resultado
+
+@enduml
