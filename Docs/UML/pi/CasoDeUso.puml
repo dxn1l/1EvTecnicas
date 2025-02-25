@@ -1,0 +1,20 @@
+@startuml
+
+title Diagrama de Casos de Uso - Aproximación a Pi
+
+actor Usuario
+
+usecase "Ejecutar el programa" as UC1
+usecase "Generar números aleatorios" as UC2
+usecase "Verificar si el punto cae en el círculo" as UC3
+usecase "Calcular aproximación de Pi" as UC4
+usecase "Mostrar resultado" as UC5
+
+Usuario -> UC1
+UC1 -> UC2
+UC2 -> UC3
+UC3 -> UC4
+UC4 -> UC5
+UC5 -> Usuario
+
+@enduml

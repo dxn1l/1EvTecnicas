@@ -1,0 +1,22 @@
+@startuml
+
+title Diagrama de Actividades - Aproximación a Pi
+
+start
+
+:Solicitar número de puntos;
+:Inicializar aciertos en 0;
+
+repeat
+    :Generar x, y aleatorios;
+    if (¿Está dentro del círculo?) then (Sí)
+        :Incrementar aciertos;
+    endif
+repeat while (Puntos restantes)
+
+:Calcular aproximación de Pi;
+:Mostrar resultado;
+
+stop
+
+@enduml

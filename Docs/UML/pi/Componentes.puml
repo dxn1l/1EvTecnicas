@@ -1,0 +1,15 @@
+@startuml
+
+title Diagrama de Componentes - Aproximación a Pi
+
+component "Aplicación" {
+    [Principal] --> [Matematicas]
+}
+
+component "Librerías" {
+    [Math]
+}
+
+[Matematicas] --> [Math] : "Usa funciones matemáticas"
+
+@enduml
