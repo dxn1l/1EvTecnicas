@@ -1,0 +1,27 @@
+@startuml
+
+title Diagrama de Despliegue - Búsqueda de un Camino en un Grafo
+
+node "Usuario" {
+    [Interfaz de Consola]
+}
+
+node "Servidor" {
+    component "Aplicación" {
+        [Principal] --> [Graph]
+    }
+}
+
+node "Sistema" {
+    [Procesador]
+    [Memoria]
+}
+
+[Interfaz de Consola] --> [Principal] : "Ejecuta la búsqueda de camino"
+[Principal] --> [Graph] : "Procesa la búsqueda en el grafo"
+[Graph] --> [Procesador] : "Realiza cálculos de búsqueda"
+[Graph] --> [Memoria] : "Almacena vértices y aristas"
+[Graph] --> [Principal] : "Devuelve camino encontrado"
+[Principal] --> [Interfaz de Consola] : "Muestra resultado al usuario"
+
+@enduml

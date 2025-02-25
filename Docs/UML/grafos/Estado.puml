@@ -1,0 +1,28 @@
+@startuml
+
+title Diagrama de Estados - Búsqueda de un Camino en un Grafo
+
+state "Inicio" as Inicio
+state "Creación del Grafo" as CreacionGrafo
+state "Solicitar Búsqueda" as SolicitarBusqueda
+state "Inicializar Pila y Traza" as Inicializar
+state "Buscar Camino" as BuscarCamino
+state "Actualizar Traza y Pila" as Actualizar
+state "Camino Encontrado" as CaminoEncontrado
+state "No se encontró camino" as CaminoNoEncontrado
+state "Mostrar Resultado" as MostrarResultado
+state "Fin" as Fin
+
+Inicio --> CreacionGrafo
+CreacionGrafo --> SolicitarBusqueda
+SolicitarBusqueda --> Inicializar
+Inicializar --> BuscarCamino
+BuscarCamino --> CaminoEncontrado : "Si se encuentra destino"
+BuscarCamino --> Actualizar : "Si no se encuentra destino"
+Actualizar --> BuscarCamino
+CaminoEncontrado --> MostrarResultado
+BuscarCamino --> CaminoNoEncontrado : "Si la pila está vacía"
+CaminoNoEncontrado --> MostrarResultado
+MostrarResultado --> Fin
+
+@enduml

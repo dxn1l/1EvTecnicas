@@ -1,0 +1,27 @@
+@startuml
+
+title Diagrama Temporal - Búsqueda de un Camino en un Grafo
+
+participant "Usuario" as Usuario
+participant "Sistema" as Sistema
+participant "Graph" as Grafo
+
+Usuario -> Sistema : Inicia ejecución (t=0s)
+Sistema -> Grafo : Crear grafo con vértices y aristas (t=1s)
+Usuario -> Sistema : Solicitar búsqueda de camino (t=2s)
+Sistema -> Grafo : Ejecutar método onePath(v1, v2) (t=3s)
+Grafo -> Grafo : Inicializar traza y pila abierta (t=4s)
+loop Mientras pila no esté vacía y no se encuentre destino
+    Grafo -> Grafo : Extraer vértice actual (t=5s - t=10s)
+    Grafo -> Grafo : Comprobar si es el destino (t=11s)
+    alt Si es destino
+        Grafo -> Grafo : Reconstruir camino desde la traza (t=12s)
+        Grafo -> Sistema : Devolver camino encontrado (t=13s)
+    else
+        Grafo -> Grafo : Agregar vecinos a la pila y registrar en traza (t=14s - t=20s)
+    end
+end
+Sistema -> Usuario : Mostrar resultado del camino (t=21s)
+Usuario -> Sistema : Finalizar ejecución (t=22s)
+
+@enduml

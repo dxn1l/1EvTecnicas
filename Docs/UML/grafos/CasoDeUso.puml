@@ -1,0 +1,21 @@
+@startuml
+
+title Diagrama de Casos de Uso - Búsqueda de un Camino en un Grafo
+
+actor Usuario
+
+usecase "Añadir vértice" as UC1
+usecase "Añadir arista" as UC2
+usecase "Obtener adyacentes" as UC3
+usecase "Comprobar vértice en el grafo" as UC4
+usecase "Buscar un camino entre dos vértices" as UC5
+usecase "Mostrar grafo" as UC6
+
+Usuario -> UC1
+Usuario -> UC2
+Usuario -> UC3
+Usuario -> UC4
+Usuario -> UC5
+Usuario -> UC6
+
+@enduml

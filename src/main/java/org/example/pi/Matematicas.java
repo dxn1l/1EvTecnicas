@@ -2,7 +2,7 @@ package org.example.pi;
 
 import java.util.Random;
 
-public class Aproximacion {
+public class Matematicas {
 
     public static double generarNumeroPi(long pasos) {
         Random random = new Random();
