@@ -125,15 +125,6 @@ public class Graph<V>{
         return null;
     }
 
-    /**
-     * Reconstruye un camino desde el vértice de origen hasta el vértice destino utilizando la tabla de traza.
-     *
-     * @param traza Mapa que almacena cada vértice junto con su predecesor en la búsqueda.
-     * @param v1 Vértice origen.
-     * @param v2 Vértice destino.
-     * @return Lista con la secuencia de vértices que forman el camino desde {@code v1} hasta {@code v2}.
-     */
-
     private List<V> reconstruirCamino(Map<V, V> traza, V v1, V v2) {
         List<V> camino = new LinkedList<>();
         for (V v = v2; v != null; v = traza.get(v)) {

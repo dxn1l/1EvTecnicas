@@ -116,12 +116,6 @@ public class Tablero {
         return vivos;
     }
 
-    /**
-     * Devuelve una representación en texto del estado actual del tablero.
-     * Las células vivas ('1') se muestran como 'X', y las muertas ('0') como un espacio.
-     *
-     * @return Cadena con la representación visual del tablero.
-     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

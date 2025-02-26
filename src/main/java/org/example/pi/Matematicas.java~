@@ -36,7 +36,6 @@ public class Matematicas {
             }
         }
 
-        // Calcular la aproximación de Pi
         return 4.0 * aciertos / pasos;
     }
 }

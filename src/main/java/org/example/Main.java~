@@ -1,12 +1,28 @@
 package org.example;
 
+import org.example.grafos.Graph;
 import org.example.pi.Matematicas;
 import org.example.vida.Tablero;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+
+/**
+ * Clase principal que proporciona un menú interactivo para ejecutar diferentes simulaciones:
+ * - Aproximación del número Pi usando el método de Montecarlo.
+ * - Simulación del Juego de la Vida de Conway.
+ * - Búsqueda de un camino en un grafo dirigido.
+ */
 public class Main {
+
+    /**
+     * Método principal que ejecuta el menú interactivo y permite al usuario seleccionar
+     * qué simulación desea ejecutar.
+     *
+     * @param args Argumentos de línea de comandos (no utilizados en esta aplicación).
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -44,6 +60,14 @@ public class Main {
     }
 
 
+    /**
+     * Ejecuta la simulación del Juego de la Vida.
+     * Se realizan dos simulaciones:
+     * 1. Utilizando un tablero leído desde un archivo llamado "matriz".
+     * 2. Generando un tablero aleatorio utilizando Montecarlo.
+     * Se muestra la evolución del tablero en varias iteraciones.
+     */
+
 
     private static void ejecutarJuegoDeLaVida() {
         try {
@@ -74,6 +98,27 @@ public class Main {
 
         } catch (InterruptedException e) {
             System.out.println("Error en la simulación: " + e.getMessage());
+        }
+    }
+
+    private static void ejecutarBusquedaEnGrafos() {
+        Graph<Integer> grafo = new Graph<>();
+        grafo.addEdge(1, 2);
+        grafo.addEdge(3, 4);
+        grafo.addEdge(1, 5);
+        grafo.addEdge(5, 6);
+        grafo.addEdge(6, 4);
+
+        System.out.println("Grafo creado:");
+        System.out.println(grafo);
+
+        System.out.println("Buscando camino entre 1 y 4...");
+        List<Integer> camino = grafo.onePath(1, 4);
+
+        if (camino != null) {
+            System.out.println("Camino encontrado: " + camino);
+        } else {
+            System.out.println("No se encontró un camino.");
         }
     }
 }

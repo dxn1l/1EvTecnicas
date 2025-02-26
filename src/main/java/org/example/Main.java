@@ -8,7 +8,21 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+
+/**
+ * Clase principal que proporciona un menú interactivo para ejecutar diferentes simulaciones:
+ * - Aproximación del número Pi usando el método de Montecarlo.
+ * - Simulación del Juego de la Vida de Conway.
+ * - Búsqueda de un camino en un grafo dirigido.
+ */
 public class Main {
+
+    /**
+     * Método principal que ejecuta el menú interactivo y permite al usuario seleccionar
+     * qué simulación desea ejecutar.
+     *
+     * @param args Argumentos de línea de comandos (no utilizados en esta aplicación).
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -46,6 +60,14 @@ public class Main {
     }
 
 
+    /**
+     * Ejecuta la simulación del Juego de la Vida.
+     * Se realizan dos simulaciones:
+     * 1. Utilizando un tablero leído desde un archivo llamado "matriz".
+     * 2. Generando un tablero aleatorio utilizando Montecarlo.
+     * Se muestra la evolución del tablero en varias iteraciones.
+     */
+
 
     private static void ejecutarJuegoDeLaVida() {
         try {
@@ -78,6 +100,12 @@ public class Main {
             System.out.println("Error en la simulación: " + e.getMessage());
         }
     }
+
+    /**
+     * Ejecuta la simulación de búsqueda de un camino en un grafo dirigido.
+     * Se crea un grafo con vértices y aristas predefinidos y se busca un camino entre los nodos 1 y 4.
+     * Se muestra el grafo y el resultado de la búsqueda.
+     */
 
     private static void ejecutarBusquedaEnGrafos() {
         Graph<Integer> grafo = new Graph<>();
